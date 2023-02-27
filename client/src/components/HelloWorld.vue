@@ -1,8 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <p>Enter some text below and have NestJS answer with the same text.</p>
-    <p style="white-space: pre-line">{{ message }}</p>
     <div class="input-container">
       <textarea
         class="text-container"
@@ -25,7 +23,10 @@ export default {
   name: 'HelloWorld',
   mounted() {
     const _this = this;
-    const socket = new io('http://localhost:3000');
+    const socket = new io('api.example.local.dev', {
+      withCredentials: true,
+      transports: ['websocket'],
+    });
     this.socket = socket;
     this.socket.on('response', function (response) {
       _this.response = response;
