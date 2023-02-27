@@ -6,6 +6,8 @@ A sample application for demonstrating SocketIO with NestJS gateways. Uses Vue a
 
 ### Server
 
+Generate the server-side certificates using the included script `sh makecert.sh` and move the generated certificates to a folder named `certs`. Remember to include your domains in your system's hostfile. 
+
 Run `npm install` followed by `npm run start:dev` in the root directory to start the NestJS server in development mode.
 
 ### Client
